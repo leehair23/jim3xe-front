@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import CssBaseline from "@mui/material/CssBaseline";
+import React from "react";
+import styled from "@emotion/styled";
+import { Container } from "@mui/material";
+import { RouterProvider } from "react-router";
+import { router } from "./utils/route-generator";
 
-function App() {
+const AppWrapper = styled("div")({
+  width: "100%",
+  height: "100vh",
+  backgroundColor: "hsl(210, 35%, 9%)",
+  color: "#ffff",
+});
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <CssBaseline />
+      <Container
+        maxWidth="xl"
+        sx={{
+          padding: "1rem",
+          height: "100%",
+        }}
+      >
+        <RouterProvider router={router} />
+      </Container>
+    </AppWrapper>
   );
-}
+};
 
 export default App;
