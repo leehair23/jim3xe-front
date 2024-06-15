@@ -19,7 +19,7 @@ const App = () => {
       <Container
         maxWidth="xl"
         sx={{
-          padding: "1rem",
+          padding: "0 1rem",
           height: "100%",
         }}
       >
