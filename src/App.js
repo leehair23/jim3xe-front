@@ -11,7 +11,6 @@ const AppWrapper = styled("div")({
   backgroundColor: "hsl(210, 35%, 9%)",
   color: "#ffff",
 });
-
 const App = () => {
   return (
     <AppWrapper>

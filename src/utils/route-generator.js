@@ -1,5 +1,6 @@
 import ErrorBoundaryWrapper from "../components/ErrorBoundaryWrapper";
 import HomePage from "../pages/HomePage";
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 const router = createBrowserRouter([
