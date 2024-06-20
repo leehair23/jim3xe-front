@@ -3,6 +3,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Container } from "@mui/material";
 import { RouterProvider } from "react-router";
+import { RecoilRoot } from "recoil";
 import { router } from "./utils/route-generator";
 
 const AppWrapper = styled("div")({
@@ -13,18 +14,20 @@ const AppWrapper = styled("div")({
 });
 const App = () => {
   return (
-    <AppWrapper>
-      <CssBaseline />
-      <Container
-        maxWidth="xl"
-        sx={{
-          padding: "0 1rem",
-          height: "100%",
-        }}
-      >
-        <RouterProvider router={router} />
-      </Container>
-    </AppWrapper>
+    <RecoilRoot>
+      <AppWrapper>
+        <CssBaseline />
+        <Container
+          maxWidth="xl"
+          sx={{
+            padding: "0 1rem",
+            height: "100%",
+          }}
+        >
+          <RouterProvider router={router} />
+        </Container>
+      </AppWrapper>
+    </RecoilRoot>
   );
 };
 

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
@@ -20,6 +21,14 @@ const ErrorBoundaryWrapper = (props) => {
       {props.children || null}
     </ErrorBoundary>
   );
+};
+
+ErrorBoundaryWrapper.propTypes = {
+  children: PropTypes.element || null,
+  error: PropTypes.shape({
+    message: PropTypes.string,
+  }),
+  resetErrorBoundary: PropTypes.any || null,
 };
 
 export default ErrorBoundaryWrapper;

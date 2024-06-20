@@ -3,6 +3,7 @@ import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import CustomSwitch, { CSwComponent_checkedState } from "../CustomSwitch";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -12,6 +13,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 
 // import AdbIcon from "@mui/icons-material/Adb";
 
@@ -54,6 +56,8 @@ const rightNavBarItems = {
 const NavBar = () => {
   const [anchorNav, setAnchorNav] = useState(null);
   const [anchorUser, setAnchorUser] = useState(null);
+  const checked = useRecoilValue(CSwComponent_checkedState);
+  const switchLabel = checked ? "dark-mode" : "light-mode";
 
   const handleOpenNavMenu = (event) => {
     setAnchorNav(event.currentTarget);
@@ -205,6 +209,9 @@ const NavBar = () => {
               open={!!anchorUser}
               onClose={handleCloseUserMenu}
             >
+              <MenuItem>
+                <CustomSwitch label={switchLabel} />
+              </MenuItem>
               {Object.keys(rightNavBarItems).map((item) => (
                 <MenuItem
                   key={rightNavBarItems[item].id}
