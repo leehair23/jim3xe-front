@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run lint fix before text 
+echo "Running lint:fix before running test"
+npm run lint:fix
+echo " --- "
+
+echo "Running test"
+npm run test
+echo " --- "

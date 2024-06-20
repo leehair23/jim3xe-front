@@ -2,6 +2,7 @@ import babelParser from "@babel/eslint-parser";
 import globals from "globals";
 import pluginJs from "@eslint/js";
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
+import prettier from "eslint-plugin-prettier";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 
@@ -13,6 +14,7 @@ const eslintConfigs = [
     plugins: {
       react,
       "react-hooks": reactHooks,
+      prettier,
     },
     languageOptions: {
       ...pluginReactConfig.languageOptions,
